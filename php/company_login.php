@@ -14,9 +14,16 @@ if(mysqli_num_rows($result)>0)
         if($email == $row['email'])
         {
             if($pass == $row['pass'])
-                echo "Correct credentials";
+                echo "<script type=\"text/javascript\">
+                        window.location.href = \"http://localhost/alumni_econ/companydash/index.html\";
+                        </script>";
             else
+            {
                 echo "Incorrect credentials";
+                echo "<script type=\"text/javascript\">
+                        window.location.href = \"http://localhost/alumni_econ/logins/company_login.html\";
+                        </script>";
+            }
         }
     }
 }
