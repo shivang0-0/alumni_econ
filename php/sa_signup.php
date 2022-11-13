@@ -15,11 +15,12 @@ if($selected_radio == 's')
     $sql = "INSERT INTO student_credentials VALUES (NULL,'$sname','$email','$phone','$dob','$pass')";
     if(mysqli_query($con,$sql))
     {
-        echo "Student account created!!";
+        echo "<script>";
+        echo"alert('Student Account Created Successfully!');";
+        echo"window.location.href='http://localhost/alumni_econ/logins/login_sa.html';";
+        echo"</script>";
     }
     mysqli_close($con);
-    sleep(2);
-    header('Location: http://localhost/alumni_econ/logins/login_sa.html');
 }
 else if ($selected_radio == 'a')
 {
@@ -36,9 +37,11 @@ else if ($selected_radio == 'a')
     $sql = "INSERT INTO alumni_credentials VALUES (NULL,'$alname','$email','$phone','$dob','$pass')";
     if(mysqli_query($con,$sql))
     {
-        echo "Alumni account created!!";
+        echo "<script>";
+        echo"alert('Alumni Account Created Successfully!');";
+        echo"window.location.href='http://localhost/alumni_econ/logins/login_sa.html';";
+        echo"</script>";
     }
-    sleep(2);
     mysqli_close($con);
 }
 ?>
