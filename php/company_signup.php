@@ -10,8 +10,9 @@ if(!$con)
 $sql = "INSERT INTO company_credentials VALUES (NULL , '$cname' , '$email' ,'$pass')";
 if(mysqli_query($con,$sql))
 {
-   echo "query ran";
+   echo "Company Account Created Successfully";
 }
-echo "Account created!!";
+sleep(2);
+header('Location: http://localhost/alumni_econ/logins/login_sa.html');
 mysqli_close($con);
 ?>

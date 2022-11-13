@@ -11,8 +11,9 @@ if(!$con)
 $sql = "INSERT INTO admin_credentials VALUES (NULL , '$aname' , '$email' ,'$pass')";
 if(mysqli_query($con,$sql))
 {
-   echo "query ran";
+   echo "Admin account created successfully!!";
 }
-echo "Account created!!";
+sleep(2);
+header('Location: http://localhost/alumni_econ/logins/login_admin.html');
 mysqli_close($con);
 ?>
