@@ -7,8 +7,9 @@ if(!$con)
 {
     echo "Failed to connect to MYSQL: " . mysqli_connect_error();
 }
-$sql = "INSERT INTO admin_credentials VALUES (NULL , '$aname' , '$email' ,'$pass')";
-if(mysqli_query($con,$sql))
+$sql1 = "INSERT INTO admin_details VALUES (NULL , '$aname' , '$email')";
+$sql2 = "INSERT INTO admin_cred VALUES ('$email','$pass')";
+if(mysqli_query($con,$sql1) && mysqli_query($con,$sql2))
 {
     echo "<script>";
     echo"alert('Admin Account Created Successfully!');";

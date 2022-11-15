@@ -6,7 +6,7 @@ if(!$con)
 }
 $email = $_POST['email'];
 $pass = $_POST['pass'];
-$result = mysqli_query($con,"SELECT email,pass FROM company_cred");
+$result = mysqli_query($con,"SELECT email,pass FROM admin_cred");
 if(mysqli_num_rows($result)>0)
 {
     while($row = mysqli_fetch_array($result))
@@ -15,13 +15,13 @@ if(mysqli_num_rows($result)>0)
         {
             if($pass == $row['pass'])
                 echo "<script type=\"text/javascript\">
-                        window.location.href = \"http://localhost/alumni_econ/companydash/index.html\";
+                        window.location.href = \"http://localhost/alumni_econ/admindash/index.html\";
                         </script>";
             else
             {
                 echo "<script type=\"text/javascript\">
                 alert('Incorrect credentials');
-                window.location.href = \"http://localhost/alumni_econ/logins/login_company.html\";
+                window.location.href = \"http://localhost/alumni_econ/logins/login_admin.html\";
                 </script>";
             }
         }
@@ -29,7 +29,7 @@ if(mysqli_num_rows($result)>0)
             {
                 echo "<script type=\"text/javascript\">
                 alert('Incorrect credentials');
-                window.location.href = \"http://localhost/alumni_econ/logins/login_company.html\";
+                window.location.href = \"http://localhost/alumni_econ/logins/login_admin.html\";
                 </script>";
             }
     }

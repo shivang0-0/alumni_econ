@@ -7,8 +7,10 @@ if(!$con)
 {
     echo "Failed to connect to MYSQL: " . mysqli_connect_error();
 }
-$sql = "INSERT INTO company_credentials VALUES (NULL , '$cname' , '$email' ,'$pass')";
-if(mysqli_query($con,$sql))
+$sql1 = "INSERT INTO company_details VALUES (NULL , '$cname' , '$email')";
+$sql2 = "INSERT INTO company_cred VALUES ('$email','$pass')";
+
+if(mysqli_query($con,$sql1) && mysqli_query($con,$sql2))
 {
     echo "<script>";
     echo"alert('Company Account Created Successfully!');";
