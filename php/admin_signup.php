@@ -1,5 +1,4 @@
 <?php
-echo "reached php";
 $con = mysqli_connect("localhost","root","","project");
 $aname = $_POST['nm'];
 $email = $_POST['email'];
@@ -11,9 +10,10 @@ if(!$con)
 $sql = "INSERT INTO admin_credentials VALUES (NULL , '$aname' , '$email' ,'$pass')";
 if(mysqli_query($con,$sql))
 {
-   echo "Admin account created successfully!!";
+    echo "<script>";
+    echo"alert('Admin Account Created Successfully!');";
+    echo"window.location.href='http://localhost/alumni_econ/logins/login_admin.html';";
+    echo"</script>";
 }
-sleep(2);
-header('Location: http://localhost/alumni_econ/logins/login_admin.html');
 mysqli_close($con);
 ?>
