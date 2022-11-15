@@ -44,4 +44,11 @@ else if ($selected_radio == 'a')
     }
     mysqli_close($con);
 }
+else
+{
+    echo "<script>";
+    echo"alert('Please select Student/Alumni');";
+    echo"window.location.href=href='javascript:history.go(-1)';";
+    echo"</script>";
+}
 ?>
