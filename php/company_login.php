@@ -25,14 +25,11 @@ if(mysqli_num_rows($result)>0)
                 </script>";
             }
         }
-        else
-            {
-                echo "<script type=\"text/javascript\">
+    }
+    echo "<script type=\"text/javascript\">
                 alert('Incorrect credentials');
                 window.location.href = \"http://localhost/alumni_econ/logins/login_company.html\";
                 </script>";
-            }
-    }
 }
 else
 {

@@ -28,14 +28,11 @@ if($selected_radio == 's')
                     </script>";
                 }
             }
-            else
-            {
-                echo "<script type=\"text/javascript\">
+        }
+        echo "<script type=\"text/javascript\">
                 alert('Incorrect credentials');
                 window.location.href = \"http://localhost/alumni_econ/logins/login_sa.html\";
                 </script>";
-            }
-        }
     }
     else
     {
@@ -73,14 +70,11 @@ else if ($selected_radio == 'a')
                     </script>";
                 }
             }
-            else
-            {
-                echo "<script type=\"text/javascript\">
+        }
+        echo "<script type=\"text/javascript\">
                 alert('Incorrect credentials');
                 window.location.href = \"http://localhost/alumni_econ/logins/login_sa.html\";
                 </script>";
-            }
-        }
     }
     else
     {
