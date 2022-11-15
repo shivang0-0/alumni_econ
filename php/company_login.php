@@ -19,17 +19,26 @@ if(mysqli_num_rows($result)>0)
                         </script>";
             else
             {
-                echo "Incorrect credentials";
                 echo "<script type=\"text/javascript\">
-                        window.location.href = \"http://localhost/alumni_econ/logins/company_login.html\";
-                        </script>";
+                alert('Incorrect credentials');
+                window.location.href = \"http://localhost/alumni_econ/logins/login_company.html\";
+                </script>";
             }
         }
+        else
+            {
+                echo "<script type=\"text/javascript\">
+                alert('Incorrect credentials');
+                window.location.href = \"http://localhost/alumni_econ/logins/login_company.html\";
+                </script>";
+            }
     }
 }
 else
 {
-    echo "No records in db";
+    echo "<script type=\"text/javascript\">
+    alert('No records in database');
+    </script>";
 }
 mysqli_close($con);
 ?>
