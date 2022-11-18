@@ -23,7 +23,20 @@
   <meta name="robots" content="noindex, follow">
   <script
     nonce="e7526cfe-f2d8-4f1a-b589-b1136fc55724">(function (w, d) { !function (Z, _, ba, bb) { Z.zarazData = Z.zarazData || {}; Z.zarazData.executed = []; Z.zaraz = { deferred: [], listeners: [] }; Z.zaraz.q = []; Z.zaraz._f = function (bc) { return function () { var bd = Array.prototype.slice.call(arguments); Z.zaraz.q.push({ m: bc, a: bd }) } }; for (const be of ["track", "set", "debug"]) Z.zaraz[be] = Z.zaraz._f(be); Z.zaraz.init = () => { var bf = _.getElementsByTagName(bb)[0], bg = _.createElement(bb), bh = _.getElementsByTagName("title")[0]; bh && (Z.zarazData.t = _.getElementsByTagName("title")[0].text); Z.zarazData.x = Math.random(); Z.zarazData.w = Z.screen.width; Z.zarazData.h = Z.screen.height; Z.zarazData.j = Z.innerHeight; Z.zarazData.e = Z.innerWidth; Z.zarazData.l = Z.location.href; Z.zarazData.r = _.referrer; Z.zarazData.k = Z.screen.colorDepth; Z.zarazData.n = _.characterSet; Z.zarazData.o = (new Date).getTimezoneOffset(); Z.zarazData.q = []; for (; Z.zaraz.q.length;) { const bl = Z.zaraz.q.shift(); Z.zarazData.q.push(bl) } bg.defer = !0; for (const bm of [localStorage, sessionStorage]) Object.keys(bm || {}).filter((bo => bo.startsWith("_zaraz_"))).forEach((bn => { try { Z.zarazData["z_" + bn.slice(7)] = JSON.parse(bm.getItem(bn)) } catch { Z.zarazData["z_" + bn.slice(7)] = bm.getItem(bn) } })); bg.referrerPolicy = "origin"; bg.src = "../../../cdn-cgi/zaraz/sd0d9.js?z=" + btoa(encodeURIComponent(JSON.stringify(Z.zarazData))); bf.parentNode.insertBefore(bg, bf) };["complete", "interactive"].includes(_.readyState) ? zaraz.init() : Z.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, 0, "script"); })(window, document);</script>
-  
+  <style>
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      background: transparent;
+      bottom: 0;
+      color: transparent;
+      cursor: pointer;
+      height: auto;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -33,18 +46,62 @@
         <div class="login100-pic js-tilt" data-tilt>
           <img src="images/img-01.png" alt="IMG">
         </div>
-        <form class="login100-form validate-form" method="post" action="http://localhost/alumni_econ/php/sa_signup.php">
+        <form class="login100-form validate-form" method="post" action="http://localhost/alumni_econ/php/student_signup.php">
           <span class="login100-form-title">
-            Student/Alumni Signup
+            Student Signup
           </span>
-          <div text-align="right">
-            <input type="radio" name="sa" value="s"> <b>Student</b> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            <input type="radio" name="sa" value="a"> <b>Alumni</b>
+          <div class="wrap-input100 validate-input" data-validate="Name is required">
+            <input class="input100" type="text" name="nm" placeholder="Full name">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </span>
           </div>
-          <br>
-        <div class="container-login100-form-btn">
+          <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+            <input class="input100" type="text" name="email" placeholder="Email">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate="Enrollment number is required">
+            <input class="input100" type="text" name="enroll" maxlength="8" minlength="8" placeholder="Enrollment number">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-book" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate="Passing year is required">
+            <input class="input100" type="number" min="2022" max="2026" placeholder="Passing year">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate="Phone number is required">
+            <input class="input100" type="text" name="phone" placeholder="Phone">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate="Date of birth is required">
+            <input class="input100" type="date" value="19-01-01" min ="1952-01-01" max="2002-12-30" name="dob">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate="Password is required">
+            <input class="input100" type="password" name="pass" placeholder="Password">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-lock" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="container-login100-form-btn">
             <button class="login100-form-btn" type="submit">
-              Next⮕
+              Create Account
             </button>
           </div>
           <div class="text-center p-t-12">
