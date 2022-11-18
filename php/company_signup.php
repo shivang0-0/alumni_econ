@@ -14,7 +14,7 @@ $sql1 = "INSERT INTO company_details VALUES (NULL , '$cname' , '$email')";
 $sql2 = "INSERT INTO company_cred VALUES ('$email','$pass')";
 $sql3 = "INSERT INTO company_dash VALUES (NULL, '$location_based', '$phone', '$website')";
 
-if(mysqli_query($con,$sql1) && mysqli_query($con,$sql2))
+if(mysqli_query($con,$sql1) && mysqli_query($con,$sql2) && mysqli_query($con,$sql3))
 {
     echo "<script>";
     echo"alert('Company Account Created Successfully!');";
@@ -22,4 +22,4 @@ if(mysqli_query($con,$sql1) && mysqli_query($con,$sql2))
     echo"</script>";
 }
 mysqli_close($con);
-?>website
+?>
