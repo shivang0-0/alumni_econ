@@ -12,9 +12,12 @@ if($ref=='true' || $ref=='false')
     $phone = $_POST['phone'];
     $dob = $_POST['dob'];
     $pass = $_POST['pass'];
+    $year = $_POST['year'];
+    $comp = $_POST['company'];
     $sql1 = "INSERT INTO alumni_details VALUES (NULL,'$alname','$email','$phone','$dob')";
     $sql2 = "INSERT INTO alumni_cred VALUES ('$email','$pass')";
-    if(mysqli_query($con,$sql1) && mysqli_query($con,$sql2))
+    $sql3 = "INSERT INTO alumni_dash VALUES (NULL,'$year','$comp','$ref')";
+    if(mysqli_query($con,$sql1) && mysqli_query($con,$sql2) && mysqli_query($con,$sql3))
     {
         echo "<script>";
         echo"alert('Alumni Account Created Successfully!');";
