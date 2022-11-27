@@ -13,7 +13,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
-    <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
@@ -179,7 +179,7 @@
                                     <div id="sparklinedash"><canvas width="67" height="30"
                                             style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                     </div>
-                                </li>
+
                                 <li class="ms-auto"><span class="counter text-success">659</span></li>
                             </ul>
                         </div>
@@ -227,7 +227,7 @@
   align-items: center;
   justify-content: center;
 ">
-                                <select class="form-select shadow-none row border-top"  id="dropdown" name="sel" onchange="makevisible()" style="position:absolute; right:30%; width:900px;">
+                                <select class="form-select shadow-none row border-top"  id="dropdown" name="sel" onchange="makevisible()" style="position:absolute; right:30%; width:500px;">
                                     <option selected><b>Find employee from your college at your company</b> </option>
                                     <option><b>Change your existing company name</b> </option>
                                     
@@ -292,7 +292,7 @@
                     {
                         $servername = "localhost";
                         $username = "root";
-                        $password = "";
+                        $password = "root";
                         $dbname = "project";
                         $conn = mysqli_connect($servername, $username, $password, $dbname);
                         if (!$conn) {
@@ -358,11 +358,14 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+
+
+    <!-- <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script> -->
     <!-- Bootstrap tether Core JavaScript -->
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script src="js/app-style-switcher.js"></script>
+
+    <!-- <script src="js/app-style-switcher.js"></script> -->
     <script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!--Wave Effects -->
     <script src="js/waves.js"></script>
@@ -372,9 +375,7 @@
     <script src="js/custom.js"></script>
     <!--This page JavaScript -->
     <!--chartis chart-->
-    <script src="plugins/bower_components/chartist/dist/chartist.min.js"></script>
-    <script src="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="js/pages/dashboards/dashboard1.js"></script>
+   
     <script>
          function makevisible() {
          selEl = document.querySelector('#dropdown');
