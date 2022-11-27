@@ -306,7 +306,7 @@
                     {
                         $servername = "localhost";
                         $username = "root";
-                        $password = "passwordisroot";
+                        $password = "";
                         $dbname = "project";
                         $conn = mysqli_connect($servername, $username, $password, $dbname);
                         if (!$conn) {

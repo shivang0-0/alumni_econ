@@ -18,7 +18,7 @@ if($selected_radio == 's')
             {
                 if($pass == $row['pass'])
                         echo "<script type=\"text/javascript\">
-                        window.location.href = \"http://localhost/alumni_econ/studentdash/index.html\";
+                        window.location.href = \"http://localhost/alumni_econ/studentdash/index.php\";
                         </script>";
                 else
                 {
