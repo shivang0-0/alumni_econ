@@ -6,11 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
-    <meta name="description"
-        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
-    <meta name="robots" content="noindex,nofollow">
+    
+    
     <title>Alumni Econ</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
@@ -231,9 +228,10 @@
   justify-content: center;
 ">
                                 <select class="form-select shadow-none row border-top"  id="dropdown" name="sel" onchange="makevisible()" style="position:absolute; right:30%; width:900px;">
-                                    <option selected><b>Alumni available for referrals</b> </option>
-                                    <option><b>Alumni working in same company</b></option>
-                                    <option><b>Show recent opportunities</b></option>
+                                    <option selected><b>Find employee from your college at your company</b> </option>
+                                    <option><b>Change your existing company name</b> </option>
+                                    
+
                                 </select>
                                 <div style="visibility:hidden;" id="comp_name">
                                 Company Name: <input name="inp">&nbsp &nbsp    
@@ -362,7 +360,8 @@
     <!-- ============================================================== -->
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="js/app-style-switcher.js"></script>
     <script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!--Wave Effects -->
@@ -380,7 +379,7 @@
          function makevisible() {
          selEl = document.querySelector('#dropdown');
          op = selEl.value;
-            if(op=="Alumni working in same company"){
+            if(op=="Change your existing company name"){
                 document.getElementById("comp_name").style.visibility = "visible";
             }
       }

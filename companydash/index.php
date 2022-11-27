@@ -6,11 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
-    <meta name="description"
-        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
-    <meta name="robots" content="noindex,nofollow">
+
     <title>Alumni Econ</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
@@ -21,7 +17,85 @@
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
 </head>
+<style>
+    .container {
+   
+      width:500px;
+   
 
+      border:1px solid #ccc;
+      border-radius:10px;
+      background:white;
+  -webkit-box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
+  -moz-box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
+  box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
+  }
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f7f7f7;
+	font-family: Montserrat,Arial, Helvetica, sans-serif;
+}
+select {
+  width: 18%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f7f7f7;
+	font-family: Montserrat,Arial, Helvetica, sans-serif;
+}
+
+input[type=phone] {
+  width: 81%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f7f7f7;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=phone]:focus, select:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+
+/* Set a style for all buttons */
+button {
+  background-color: #0eb7f4;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+	font-size:16px;
+	font-family: Montserrat,Arial, Helvetica, sans-serif;
+	border-radius:10px;
+}
+
+button:hover {
+  opacity:1;
+}
+
+
+/* Change styles for signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .signupbtn {
+     width: 100%;
+  }
+}
+
+
+</style>
 <body>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
@@ -215,46 +289,57 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="white-box">
-                        <h3 class="box-title">Interview selection rates</h3>
-                        <div class="d-md-flex">
-                            <ul class="list-inline d-flex ms-auto">
-                                <li class="ps-3">
-                                    <h5><i class="fa fa-circle me-1 text-info"></i>Oncampus</h5>
-                                </li>
-                                <li class="ps-3">
-                                    <h5><i class="fa fa-circle me-1 text-inverse"></i>Offcampus</h5>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="ct-visits" style="height: 405px;">
-                            <div class="chartist-tooltip" style="top: -17px; left: -12px;"><span
-                                    class="chartist-tooltip-value">6</span>
-                            </div>
-                        </div>
-                    </div>
+                <div>
+                <form>
+        <div class="container">
+          <h1>Post an Opportunity</h1>
+          <p>Please enter the following details to post a opportunity</p>
+      <br>
+              <label for="email"><b>Job role</b></label>
+            <input type="text" name="username" placeholder="Enter Job role"  style="width:300px;" required>
+            <br>
+          <label for="email"><b>For passing year</b></label>
+          <input type="number" placeholder="Enter Passing year" name="email" required>
+          <br>
+          <label for="psw"><b>Salary</b></label>
+          <input type="number" placeholder="Enter Salary" name="psw" required>
+<br>
+          <label for="psw"><b>Job Description</b></label>
+          <input type="text" placeholder="Enter Job details" name="psw" required>
+
+<br>
+          <label for="psw"><b>Job Location</b></label>
+          <input type="number" placeholder="Enter Location" name="psw" required>
+
+
+
+
+          
+
+
+      <br>
+                  <label for="email"><b>Phone Number</b></label>
+            <br>
+           <select name="phoneCode" required>
+            <option selected hidden value="">Code</option>
+            <option value="66">+91</option>
+           
+           </select>
+           <input type="phone" name="phone" placeholder="999999999" required>
+      
+        
+          <div class="clearfix">
+      
+            <button type="submit">Post opportunity</button>
+          </div>
+        </div>
+      </form>
                 </div>
-            </div>
+                
 
 
             
-            <div class="row">
-                <div class="col-md-12 col-lg-12 col-sm-12">
-                    <div class="white-box">
-                        <div class="d-md-flex mb-3">
-                            <h3 class="box-title mb-0">Recent Applicants</h3>
-                            <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
-                            <form method="POST">
-                                <select class="form-select shadow-none row border-top" name="sel">
-                                    <option selected>Alumni available for referrals</option>
-                                    <option>Alumni working in same company</option>
-                                </select>
-                                Company Name: <input name="inp">&nbsp &nbsp    
-                            <input type="submit" name="sub">
-                            </form>
-                            </div>
-                        </div>
+          
                         <?php
                         if(isset($_POST['sub']))
                         {
@@ -347,45 +432,7 @@
                     }
                 }
                     ?>
-            <div class="col-lg-4 col-md-12 col-sm-12">
-                <div class="card white-box p-0">
-                    <div class="card-heading">
-                        <h3 class="box-title mb-0">Current Interviewers</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="chatonline">
-                            <li>
-                                <div class="call-chat">
-                                    <button class="btn btn-success text-white btn-circle btn" type="button">
-                                        <i class="fas fa-phone"></i>
-                                    </button>
-                                    <button class="btn btn-info btn-circle btn" type="button">
-                                        <i class="far fa-comments text-white"></i>
-                                    </button>
-                                </div>
-                                <a href="javascript:void(0)" class="d-flex align-items-center"><img
-                                        src="plugins/images/users/varun.jpg" alt="user-img" class="img-circle">
-                                    <div class="ms-2">
-                                        <span class="text-dark">cool guy <small
-                                                class="d-block text-success d-block">online</small></span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="call-chat">
-                                    <button class="btn btn-success text-white btn-circle btn" type="button">
-                                        <i class="fas fa-phone"></i>
-                                    </button>
-                                    <button class="btn btn-info btn-circle btn" type="button">
-                                        <i class="far fa-comments text-white"></i>
-                                    </button>
-                                </div>
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+           
             <!-- /.col -->
         </div>
     </div>
@@ -395,9 +442,7 @@
     <!-- ============================================================== -->
     <!-- footer -->
     <!-- ============================================================== -->
-    <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
-            href="https://www.wrappixel.com/">wrappixel.com</a>
-    </footer>
+    
     <!-- ============================================================== -->
     <!-- End footer -->
     <!-- ============================================================== -->
