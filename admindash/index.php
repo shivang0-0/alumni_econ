@@ -246,11 +246,7 @@
                             <h3 class="box-title mb-0">Recent Applicants</h3>
                             <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
                             <form method="POST">
-                                <select class="form-select shadow-none row border-top" name="sel">
-                                    <option selected>Alumni available for referrals</option>
-                                    <option>Alumni working in same company</option>
-                                </select>
-                                Company Name: <input name="inp">&nbsp &nbsp    
+                                Query: <input name="inp">&nbsp &nbsp   
                             <input type="submit" name="sub">
                             </form>
                             </div>
@@ -258,8 +254,6 @@
                         <?php
                         if(isset($_POST['sub']))
                         {
-                        if($_POST['sel']=="Alumni available for referrals")
-                        {
                         $servername = "localhost";
                         $username = "root";
                         $password = "passwordisroot";
@@ -268,84 +262,21 @@
                         if (!$conn) {
                         die("Connection failed: " . mysqli_connect_error());
                         }
-
-                        $sql = "SELECT A1.alname,A1.email,A1.phone,A2.passed_year,A2.current_company FROM alumni_details A1, alumni_dash A2 WHERE A1.alid=A2.alid AND A2.referral_availability='true'";
-                        $result = mysqli_query($conn, $sql);
-                        echo '<div class="table-responsive">
-                        <table class="table no-wrap">
-                            <thead>
-                                <tr>
-                                    <th class="border-top-0">Name</th>
-                                    <th class="border-top-0">Email</th>
-                                    <th class="border-top-0">Phone</th>
-                                    <th class="border-top-0">Passing Year</th>
-                                    <th class="border-top-0">Current Company</th>
-                                </tr>
-                            </thead>
-                            <tbody>';		
-                        if (mysqli_num_rows($result) > 0)
+                        if($_POST['inp']!="")
                         {
-                        while($row = mysqli_fetch_array($result))
-                        {
-                            echo '<tr><td>'.$row["alname"].'</td><td>'.$row["email"].'</td><td>'.$row["phone"].'</td><td>'.$row["passed_year"].'</td><td>'.$row["current_company"].'</td></tr>';
-                        }
+                            if(mysqli_query($conn,$_POST['inp']))
+                                echo "Query successful";
+                            else
+                                echo "Query unsuccessful ".mysqli_error();
                         }
                         else
-                        {
-                        echo "0 results";
-                        }
-                        echo "</tbody>
-                        </table>
-                    </div>
+                            echo "Empty query box";
+                        echo "
                 </div>
             </div>
         </div>";
                         mysqli_close($conn);
                     }
-                    else if($_POST['sel']=="Alumni working in same company")
-                    {
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "passwordisroot";
-                        $dbname = "project";
-                        $conn = mysqli_connect($servername, $username, $password, $dbname);
-                        if (!$conn) {
-                        die("Connection failed: " . mysqli_connect_error());
-                        }
-                        $com=$_POST['inp'];
-                        $sql = "SELECT A1.alname,A1.email,A1.phone,A2.passed_year FROM alumni_details A1, alumni_dash A2 WHERE A1.alid=A2.alid AND A2.current_company='$com'";
-                        $result = mysqli_query($conn, $sql);
-                        echo '<div class="table-responsive">
-                        <table class="table no-wrap">
-                            <thead>
-                                <tr>
-                                    <th class="border-top-0">Name</th>
-                                    <th class="border-top-0">Email</th>
-                                    <th class="border-top-0">Phone</th>
-                                    <th class="border-top-0">Passing Year</th>
-                                </tr>
-                            </thead>
-                            <tbody>';		
-                        if (mysqli_num_rows($result) > 0)
-                        {
-                        while($row = mysqli_fetch_array($result))
-                        {
-                            echo '<tr><td>'.$row["alname"].'</td><td>'.$row["email"].'</td><td>'.$row["phone"].'</td><td>'.$row["passed_year"].'</td></tr>';
-                        }
-                        }
-                        else
-                        {
-                        echo "0 results";
-                        }
-                        echo "</tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>";
-                        mysqli_close($conn);
-                    }
-                }
                     ?>
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="card white-box p-0">
