@@ -2,7 +2,7 @@
 $selected_radio = $_POST['sa'];
 if($selected_radio == 's')
 {
-    $con = mysqli_connect("localhost","root","","project");
+    $con = mysqli_connect("localhost","root","passwordisroot","project");
     if(!$con)
     {
         echo "Failed to connect to MYSQL: " . mysqli_connect_error();
@@ -44,7 +44,7 @@ if($selected_radio == 's')
 }
 else if ($selected_radio == 'a')
 {
-    $con = mysqli_connect("localhost","root","","project");
+    $con = mysqli_connect("localhost","root","passwordisroot","project");
     if(!$con)
     {
         echo "Failed to connect to MYSQL: " . mysqli_connect_error();
