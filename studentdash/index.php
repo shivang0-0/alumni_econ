@@ -238,24 +238,28 @@
             </div>
 
 
-            <form method="POST">
+            
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12">
                     <div class="white-box">
                         <div class="d-md-flex mb-3">
                             <h3 class="box-title mb-0">Recent Applicants</h3>
                             <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                            <form method="POST">
                                 <select class="form-select shadow-none row border-top" name="sel">
-                                    <option>Alumni available for referrals</option>
+                                    <option selected>Alumni available for referrals</option>
                                     <option>Alumni working in same company</option>
-                                    <option>May 2021</option>
-                                    <option>June 2021</option>
-                                    <option>July 2021</option>
                                 </select>
+                                Company Name: <input name="inp">&nbsp &nbsp    
+                            <input type="submit" name="sub">
+                            </form>
                             </div>
                         </div>
-                        </form>
                         <?php
+                        if(isset($_POST['sub']))
+                        {
+                        if($_POST['sel']=="Alumni available for referrals")
+                        {
                         $servername = "localhost";
                         $username = "root";
                         $password = "passwordisroot";
@@ -297,7 +301,51 @@
             </div>
         </div>";
                         mysqli_close($conn);
-                    
+                    }
+                    else if($_POST['sel']=="Alumni working in same company")
+                    {
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "passwordisroot";
+                        $dbname = "project";
+                        $conn = mysqli_connect($servername, $username, $password, $dbname);
+                        if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                        }
+                        $com=$_POST['inp'];
+                        $sql = "SELECT A1.alname,A1.email,A1.phone,A2.passed_year FROM alumni_details A1, alumni_dash A2 WHERE A1.alid=A2.alid AND A2.current_company='$com'";
+                        $result = mysqli_query($conn, $sql);
+                        echo '<div class="table-responsive">
+                        <table class="table no-wrap">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Name</th>
+                                    <th class="border-top-0">Email</th>
+                                    <th class="border-top-0">Phone</th>
+                                    <th class="border-top-0">Passing Year</th>
+                                </tr>
+                            </thead>
+                            <tbody>';		
+                        if (mysqli_num_rows($result) > 0)
+                        {
+                        while($row = mysqli_fetch_array($result))
+                        {
+                            echo '<tr><td>'.$row["alname"].'</td><td>'.$row["email"].'</td><td>'.$row["phone"].'</td><td>'.$row["passed_year"].'</td></tr>';
+                        }
+                        }
+                        else
+                        {
+                        echo "0 results";
+                        }
+                        echo "</tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>";
+                        mysqli_close($conn);
+                    }
+                }
                     ?>
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="card white-box p-0">
