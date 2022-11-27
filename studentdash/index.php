@@ -238,22 +238,23 @@
             </div>
 
 
-
+            <form method="POST">
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12">
                     <div class="white-box">
                         <div class="d-md-flex mb-3">
                             <h3 class="box-title mb-0">Recent Applicants</h3>
                             <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
-                                <select class="form-select shadow-none row border-top">
-                                    <option>Available Alumni</option>
-                                    <option>April 2021</option>
+                                <select class="form-select shadow-none row border-top" name="sel">
+                                    <option>Alumni available for referrals</option>
+                                    <option>Alumni working in same company</option>
                                     <option>May 2021</option>
                                     <option>June 2021</option>
                                     <option>July 2021</option>
                                 </select>
                             </div>
                         </div>
+                        </form>
                         <?php
                         $servername = "localhost";
                         $username = "root";
@@ -264,7 +265,7 @@
                         die("Connection failed: " . mysqli_connect_error());
                         }
 
-                        $sql = "SELECT * FROM alumni_details";
+                        $sql = "SELECT A1.alname,A1.email,A1.phone,A2.passed_year,A2.current_company FROM alumni_details A1, alumni_dash A2 WHERE A1.alid=A2.alid AND A2.referral_availability='true'";
                         $result = mysqli_query($conn, $sql);
                         echo '<div class="table-responsive">
                         <table class="table no-wrap">
@@ -282,7 +283,7 @@
                         {
                         while($row = mysqli_fetch_array($result))
                         {
-                            echo '<tr><td>'.$row["alid"].'</td><td>'.$row["alname"].'</td><td>'.$row["email"].'</td><td>'.$row["phone"].'</td><td>'.$row["dob"].'</td></tr>';
+                            echo '<tr><td>'.$row["alname"].'</td><td>'.$row["email"].'</td><td>'.$row["phone"].'</td><td>'.$row["passed_year"].'</td><td>'.$row["current_company"].'</td></tr>';
                         }
                         }
                         else
@@ -296,6 +297,7 @@
             </div>
         </div>";
                         mysqli_close($conn);
+                    
                     ?>
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="card white-box p-0">
