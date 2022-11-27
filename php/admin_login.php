@@ -14,9 +14,13 @@ if(mysqli_num_rows($result)>0)
         if($email == $row['email'])
         {
             if($pass == $row['pass'])
+            {
+                mysqli_query($con,"CREATE TABLE IF NOT EXISTS admin_temp(email VARCHAR(30))");
+                mysqli_query($con,"INSERT INTO admin_temp VALUES('$email')");
                 echo "<script type=\"text/javascript\">
-                        window.location.href = \"http://localhost/alumni_econ/admindash/index.php\";
-                        </script>";
+                window.location.href = \"http://localhost/alumni_econ/admindash/index.php\";
+                </script>";
+            }
             else
             {
                 echo "<script type=\"text/javascript\">
