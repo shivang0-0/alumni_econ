@@ -7,7 +7,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
+        content="wrappixel, admin dashboard, html css dashboardweb dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description"
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
@@ -214,28 +214,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="white-box">
-                        <h3 class="box-title">Interview selection rates</h3>
-                        <div class="d-md-flex">
-                            <ul class="list-inline d-flex ms-auto">
-                                <li class="ps-3">
-                                    <h5><i class="fa fa-circle me-1 text-info"></i>Oncampus</h5>
-                                </li>
-                                <li class="ps-3">
-                                    <h5><i class="fa fa-circle me-1 text-inverse"></i>Offcampus</h5>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="ct-visits" style="height: 405px;">
-                            <div class="chartist-tooltip" style="top: -17px; left: -12px;"><span
-                                    class="chartist-tooltip-value">6</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                
 
 
             
@@ -243,11 +222,15 @@
                 <div class="col-md-12 col-lg-12 col-sm-12">
                     <div class="white-box">
                         <div class="d-md-flex mb-3">
-                            <h3 class="box-title mb-0">Recent Applicants</h3>
+                           
                             <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
                             <form method="POST">
-                                Query: <input name="inp">&nbsp &nbsp   
-                            <input type="submit" name="sub">
+                                <div style="display: flex; align-items: center; position:absolute; right:35%;">
+                               <div  > <h4> <b>Query:</h4></b> </div> 
+                               <div><input name="inp" style="width:420px;">&nbsp &nbsp   </div>
+                               <div><input type="submit" name="sub"> </div>
+                               </div>
+                               
                             </form>
                             </div>
                         </div>
@@ -256,7 +239,7 @@
                         {
                         $servername = "localhost";
                         $username = "root";
-                        $password = "passwordisroot";
+                        $password = "";
                         $dbname = "project";
                         $conn = mysqli_connect($servername, $username, $password, $dbname);
                         if (!$conn) {
@@ -267,10 +250,10 @@
                             if(mysqli_query($conn,$_POST['inp']))
                                 echo "Query successful";
                             else
-                                echo "Query unsuccessful ".mysqli_error();
+                                echo "Query unsuccessful ".mysqli_error($con);
                         }
                         else
-                            echo "Empty query box";
+                            echo "";
                         echo "
                 </div>
             </div>
@@ -278,44 +261,7 @@
                         mysqli_close($conn);
                     }
                     ?>
-            <div class="col-lg-4 col-md-12 col-sm-12">
-                <div class="card white-box p-0">
-                    <div class="card-heading">
-                        <h3 class="box-title mb-0">Current Interviewers</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="chatonline">
-                            <li>
-                                <div class="call-chat">
-                                    <button class="btn btn-success text-white btn-circle btn" type="button">
-                                        <i class="fas fa-phone"></i>
-                                    </button>
-                                    <button class="btn btn-info btn-circle btn" type="button">
-                                        <i class="far fa-comments text-white"></i>
-                                    </button>
-                                </div>
-                                <a href="javascript:void(0)" class="d-flex align-items-center"><img
-                                        src="plugins/images/users/varun.jpg" alt="user-img" class="img-circle">
-                                    <div class="ms-2">
-                                        <span class="text-dark">cool guy <small
-                                                class="d-block text-success d-block">online</small></span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="call-chat">
-                                    <button class="btn btn-success text-white btn-circle btn" type="button">
-                                        <i class="fas fa-phone"></i>
-                                    </button>
-                                    <button class="btn btn-info btn-circle btn" type="button">
-                                        <i class="far fa-comments text-white"></i>
-                                    </button>
-                                </div>
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+           
             </div>
             <!-- /.col -->
         </div>
@@ -326,9 +272,7 @@
     <!-- ============================================================== -->
     <!-- footer -->
     <!-- ============================================================== -->
-    <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
-            href="https://www.wrappixel.com/">wrappixel.com</a>
-    </footer>
+  
     <!-- ============================================================== -->
     <!-- End footer -->
     <!-- ============================================================== -->
