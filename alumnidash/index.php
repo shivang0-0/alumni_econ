@@ -6,11 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
-    <meta name="description"
-        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
-    <meta name="robots" content="noindex,nofollow">
+    
+    
     <title>Alumni Econ</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
@@ -215,43 +212,32 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="white-box">
-                        <h3 class="box-title">Interview selection rates</h3>
-                        <div class="d-md-flex">
-                            <ul class="list-inline d-flex ms-auto">
-                                <li class="ps-3">
-                                    <h5><i class="fa fa-circle me-1 text-info"></i>Oncampus</h5>
-                                </li>
-                                <li class="ps-3">
-                                    <h5><i class="fa fa-circle me-1 text-inverse"></i>Offcampus</h5>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="ct-visits" style="height: 405px;">
-                            <div class="chartist-tooltip" style="top: -17px; left: -12px;"><span
-                                    class="chartist-tooltip-value">6</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+         
 
 
             
-            <div class="row">
+            <div class="row ">
                 <div class="col-md-12 col-lg-12 col-sm-12">
                     <div class="white-box">
                         <div class="d-md-flex mb-3">
-                            <h3 class="box-title mb-0">Recent Applicants</h3>
+                           
                             <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
                             <form method="POST">
-                                <select class="form-select shadow-none row border-top" name="sel">
-                                    <option selected>Alumni available for referrals</option>
-                                    <option>Alumni working in same company</option>
+                                <div style="display: flex;
+  align-items: center;
+  justify-content: center;
+">
+                                <select class="form-select shadow-none row border-top"  id="dropdown" name="sel" onchange="makevisible()" style="position:absolute; right:30%; width:900px;">
+                                    <option selected><b>Find employee from your college at your company</b> </option>
+                                    <option><b>Change your existing company name</b> </option>
+                                    
+
                                 </select>
+                                <div style="visibility:hidden;" id="comp_name">
                                 Company Name: <input name="inp">&nbsp &nbsp    
-                            <input type="submit" name="sub">
+                                    </div>
+                            <input type="submit" name="sub" >
+                            </div>
                             </form>
                             </div>
                         </div>
@@ -262,7 +248,7 @@
                         {
                         $servername = "localhost";
                         $username = "root";
-                        $password = "passwordisroot";
+                        $password = "";
                         $dbname = "project";
                         $conn = mysqli_connect($servername, $username, $password, $dbname);
                         if (!$conn) {
@@ -306,7 +292,7 @@
                     {
                         $servername = "localhost";
                         $username = "root";
-                        $password = "passwordisroot";
+                        $password = "";
                         $dbname = "project";
                         $conn = mysqli_connect($servername, $username, $password, $dbname);
                         if (!$conn) {
@@ -347,45 +333,7 @@
                     }
                 }
                     ?>
-            <div class="col-lg-4 col-md-12 col-sm-12">
-                <div class="card white-box p-0">
-                    <div class="card-heading">
-                        <h3 class="box-title mb-0">Current Interviewers</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="chatonline">
-                            <li>
-                                <div class="call-chat">
-                                    <button class="btn btn-success text-white btn-circle btn" type="button">
-                                        <i class="fas fa-phone"></i>
-                                    </button>
-                                    <button class="btn btn-info btn-circle btn" type="button">
-                                        <i class="far fa-comments text-white"></i>
-                                    </button>
-                                </div>
-                                <a href="javascript:void(0)" class="d-flex align-items-center"><img
-                                        src="plugins/images/users/varun.jpg" alt="user-img" class="img-circle">
-                                    <div class="ms-2">
-                                        <span class="text-dark">cool guy <small
-                                                class="d-block text-success d-block">online</small></span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="call-chat">
-                                    <button class="btn btn-success text-white btn-circle btn" type="button">
-                                        <i class="fas fa-phone"></i>
-                                    </button>
-                                    <button class="btn btn-info btn-circle btn" type="button">
-                                        <i class="far fa-comments text-white"></i>
-                                    </button>
-                                </div>
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+          
             <!-- /.col -->
         </div>
     </div>
@@ -395,9 +343,7 @@
     <!-- ============================================================== -->
     <!-- footer -->
     <!-- ============================================================== -->
-    <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
-            href="https://www.wrappixel.com/">wrappixel.com</a>
-    </footer>
+    
     <!-- ============================================================== -->
     <!-- End footer -->
     <!-- ============================================================== -->
@@ -414,7 +360,8 @@
     <!-- ============================================================== -->
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="js/app-style-switcher.js"></script>
     <script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!--Wave Effects -->
@@ -428,6 +375,15 @@
     <script src="plugins/bower_components/chartist/dist/chartist.min.js"></script>
     <script src="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="js/pages/dashboards/dashboard1.js"></script>
+    <script>
+         function makevisible() {
+         selEl = document.querySelector('#dropdown');
+         op = selEl.value;
+            if(op=="Change your existing company name"){
+                document.getElementById("comp_name").style.visibility = "visible";
+            }
+      }
+    </script>
 </body>
 
 </html>

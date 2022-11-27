@@ -1,11 +1,15 @@
 <?php
-$con = mysqli_connect("localhost","root","passwordisroot","project");
+$con = mysqli_connect("localhost","root","","project");
 if(!$con)
 {
     echo "Failed to connect to MYSQL: " . mysqli_connect_error();
 }
 $email = $_POST['email'];
 $pass = $_POST['pass'];
+$sql = "CREATE TABLE temp_opp(email VARCHAR(50))";
+mysqli_query($con,$sql);
+$sql = "INSERT INTO temp_opp VALUES('$email')";
+mysqli_query($con,$sql);
 $result = mysqli_query($con,"SELECT email,pass FROM company_cred");
 if(mysqli_num_rows($result)>0)
 {
