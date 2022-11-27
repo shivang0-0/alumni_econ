@@ -15,7 +15,7 @@ if(mysqli_num_rows($result)>0)
         {
             if($pass == $row['pass'])
                 echo "<script type=\"text/javascript\">
-                        window.location.href = \"http://localhost/alumni_econ/companydash/index.html\";
+                        window.location.href = \"http://localhost/alumni_econ/companydash/index.php\";
                         </script>";
             else
             {

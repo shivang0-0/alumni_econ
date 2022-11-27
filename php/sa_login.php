@@ -2,7 +2,7 @@
 $selected_radio = $_POST['sa'];
 if($selected_radio == 's')
 {
-    $con = mysqli_connect("localhost","root","","project");
+    $con = mysqli_connect("localhost","root","passwordisroot","project");
     if(!$con)
     {
         echo "Failed to connect to MYSQL: " . mysqli_connect_error();
@@ -60,7 +60,7 @@ else if ($selected_radio == 'a')
             {
                 if($pass == $row['pass'])
                         echo "<script type=\"text/javascript\">
-                        window.location.href = \"http://localhost/alumni_econ/alumnidash/index.html\";
+                        window.location.href = \"http://localhost/alumni_econ/alumnidash/index.php\";
                         </script>";
                 else
                 {
